@@ -1,29 +1,25 @@
 "use client"
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter, FaAmazon, FaApple, FaSoundcloud, FaSpotify, FaYoutube } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const HeaderContainer = styled.div`
-  background-color: #000;
-  color: #fff;
-  position: relative;
+  background-color: #F9F9F9;
+  padding: 10px;
+  color: #000;
 `;
 
 const Header = styled.header`
   display: flex;
+  height: 10vh;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  @media (min-width: 768px) {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 10;
-  }
+  padding: 2rem;
+  position: relative;
 `;
 
 const Logo = styled.h1`
+  color: #000;
   font-size: 24px;
   font-weight: bold;
 `;
@@ -31,7 +27,7 @@ const Logo = styled.h1`
 const MenuButton = styled.button`
   background: none;
   border: none;
-  color: #ffff00;
+  color: #000;
   font-size: 24px;
   cursor: pointer;
   @media (min-width: 768px) {
@@ -39,7 +35,7 @@ const MenuButton = styled.button`
   }
 `;
 
-const Navigation = styled.nav`
+const MobileNavigation = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
@@ -52,32 +48,33 @@ const Navigation = styled.nav`
   align-items: center;
   transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(-100%)')};
   transition: transform 0.3s ease-in-out;
+  z-index: 1000;
   @media (min-width: 768px) {
-    position: static;
-    transform: none;
-    flex-direction: row;
+    display: none;
+  }
+`;
+
+const DesktopNavigation = styled.nav`
+  display: none;
+  @media (min-width: 768px) {
+    display: flex;
     justify-content: flex-end;
-    background-color: transparent;
-    height: auto;
+    align-items: center;
   }
 `;
 
 const NavLink = styled.a`
-  color: #ffff00;
+  color: ${props => props.isMobile ? '#ffff00' : '#000'};
   text-decoration: none;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 24px;
-  margin: 20px 0;
-  @media (min-width: 768px) {
-    margin: 0 0 0 20px;
-    font-size: 16px;
-  }
+  font-size: ${props => props.isMobile ? '24px' : '16px'};
+  margin: ${props => props.isMobile ? '20px 0' : '0 0 0 20px'};
 `;
 
 const SocialIcons = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   padding: 20px;
   @media (min-width: 768px) {
     position: absolute;
@@ -90,41 +87,65 @@ const SocialIcons = styled.div`
 `;
 
 const IconLink = styled.a`
-  color: #ffff00;
-  font-size: 20px;
-  @media (min-width: 768px) {
-    margin: 10px 0;
-  }
+  color: ${props => props.isMobile ? '#ffff00' : '#000'};
+  font-size: ${props => props.isMobile ? '20px' : '30px'};
+  margin: ${props => props.isMobile ? '0 10px' : '10px 0'};
 `;
 
 const HeaderComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const NavLinks = ({ isMobile, onClick }) => (
+    <>
+      <NavLink href="#" onClick={onClick} isMobile={isMobile}>MUSIC</NavLink>
+      <NavLink href="#" onClick={onClick} isMobile={isMobile}>VIDEOS</NavLink>
+      <NavLink href="#" onClick={onClick} isMobile={isMobile}>SHOP</NavLink>
+      <NavLink href="#" onClick={onClick} isMobile={isMobile}>CONTACT</NavLink>
+    </>
+  );
+
+  const SocialIconsComponent = ({ isMobile }) => (
+    <SocialIcons>
+      <IconLink href="#" isMobile={isMobile}><FaFacebookF /></IconLink>
+      <IconLink href="#" isMobile={isMobile}><FaInstagram /></IconLink>
+      <IconLink href="#" isMobile={isMobile}><FaTwitter /></IconLink>
+      <IconLink href="#" isMobile={isMobile}><FaAmazon /></IconLink>
+      <IconLink href="#" isMobile={isMobile}><FaApple /></IconLink>
+      <IconLink href="#" isMobile={isMobile}><FaSoundcloud /></IconLink>
+      <IconLink href="#" isMobile={isMobile}><FaSpotify /></IconLink>
+      <IconLink href="#" isMobile={isMobile}><FaYoutube /></IconLink>
+    </SocialIcons>
+  );
+
   return (
     <HeaderContainer>
       <Header>
-        <Logo>2CHAINZ</Logo>
+        <Logo>MOSTHEARDOF</Logo>
         <MenuButton onClick={toggleMenu}>☰</MenuButton>
+        <DesktopNavigation>
+          <NavLinks isMobile={false} />
+        </DesktopNavigation>
       </Header>
-      <Navigation isOpen={isMenuOpen}>
-        <NavLink href="#" onClick={toggleMenu}>MUSIC</NavLink>
-        <NavLink href="#" onClick={toggleMenu}>VIDEOS</NavLink>
-        <NavLink href="#" onClick={toggleMenu}>TOUR</NavLink>
-        <NavLink href="#" onClick={toggleMenu}>LOGIN</NavLink>
-      </Navigation>
-      <SocialIcons>
-        <IconLink href="#"><FaFacebookF /></IconLink>
-        <IconLink href="#"><FaInstagram /></IconLink>
-        <IconLink href="#"><FaTwitter /></IconLink>
-        <IconLink href="#"><FaAmazon /></IconLink>
-        <IconLink href="#"><FaApple /></IconLink>
-        <IconLink href="#"><FaSoundcloud /></IconLink>
-        <IconLink href="#"><FaSpotify /></IconLink>
-        <IconLink href="#"><FaYoutube /></IconLink>
-      </SocialIcons>
+      <MobileNavigation isOpen={isMenuOpen}>
+        <NavLinks isMobile={true} onClick={toggleMenu} />
+        <SocialIconsComponent isMobile={true} />
+      </MobileNavigation>
+      {!isMobile && <SocialIconsComponent isMobile={false} />}
     </HeaderContainer>
   );
 };
