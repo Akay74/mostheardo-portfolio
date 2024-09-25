@@ -39,7 +39,7 @@ const MobileNavigation = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 80%;
   height: 100vh;
   background-color: #000;
   display: flex;
@@ -60,6 +60,7 @@ const DesktopNavigation = styled.nav`
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    width: 40%;
   }
 `;
 
