@@ -7,6 +7,11 @@ const HeaderContainer = styled.div`
   background-color: #F9F9F9;
   padding: 10px;
   color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 `;
 
 const Header = styled.header`
@@ -39,7 +44,7 @@ const MobileNavigation = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  width: 80%;
+  width: 100%;
   height: 100vh;
   background-color: #000;
   display: flex;
@@ -48,7 +53,7 @@ const MobileNavigation = styled.nav`
   align-items: center;
   transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(-100%)')};
   transition: transform 0.3s ease-in-out;
-  z-index: 1000;
+  z-index: 1001;
   @media (min-width: 768px) {
     display: none;
   }
@@ -60,7 +65,6 @@ const DesktopNavigation = styled.nav`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    width: 40%;
   }
 `;
 
@@ -78,12 +82,13 @@ const SocialIcons = styled.div`
   justify-content: center;
   padding: 20px;
   @media (min-width: 768px) {
-    position: absolute;
+    position: fixed;
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
     flex-direction: column;
     height: auto;
+    z-index: 999;
   }
 `;
 
@@ -134,20 +139,22 @@ const HeaderComponent = () => {
   );
 
   return (
-    <HeaderContainer>
-      <Header>
-        <Logo>MOSTHEARDOF</Logo>
-        <MenuButton onClick={toggleMenu}>☰</MenuButton>
-        <DesktopNavigation>
-          <NavLinks isMobile={false} />
-        </DesktopNavigation>
-      </Header>
-      <MobileNavigation isOpen={isMenuOpen}>
-        <NavLinks isMobile={true} onClick={toggleMenu} />
-        <SocialIconsComponent isMobile={true} />
-      </MobileNavigation>
+    <>
+      <HeaderContainer>
+        <Header>
+          <Logo>MOSTHEARDOF</Logo>
+          <MenuButton onClick={toggleMenu}>☰</MenuButton>
+          <DesktopNavigation>
+            <NavLinks isMobile={false} />
+          </DesktopNavigation>
+        </Header>
+        <MobileNavigation isOpen={isMenuOpen}>
+          <NavLinks isMobile={true} onClick={toggleMenu} />
+          <SocialIconsComponent isMobile={true} />
+        </MobileNavigation>
+      </HeaderContainer>
       {!isMobile && <SocialIconsComponent isMobile={false} />}
-    </HeaderContainer>
+    </>
   );
 };
 
