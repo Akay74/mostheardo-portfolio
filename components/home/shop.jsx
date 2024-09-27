@@ -20,7 +20,7 @@ const Shop = () => {
           <h3 className="mt-2.5 mb-2.5 text-base uppercase">
             OGMK Baseball Hat
           </h3>
-          <p className="mt-1.5 mb-1.5 font-bold">$30.00</p>
+          <p className="mt-1.5 mb-1.5 font-bold">₦5,000</p>
           <button className="bg-yellow-300 text-black border-none py-2.5 px-5 cursor-pointer uppercase font-bold mt-2.5">
             Buy Now
           </button>
@@ -37,7 +37,7 @@ const Shop = () => {
           <h3 className="mt-2.5 mb-2.5 text-base uppercase">
             OGMK Hoodie
           </h3>
-          <p className="mt-1.5 mb-1.5 font-bold">$50.00</p>
+          <p className="mt-1.5 mb-1.5 font-bold">₦25,000</p>
           <button className="bg-yellow-300 text-black border-none py-2.5 px-5 cursor-pointer uppercase font-bold mt-2.5">
             Buy Now
           </button>
