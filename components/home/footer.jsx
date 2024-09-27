@@ -4,7 +4,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaAmazon, FaApple, FaSoundcloud, F
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1c1c1c] text-yellow-300 p-5 flex flex-col items-center md:flex-row md:justify-between md:py-5 md:px-5">
+    <footer className="bg-[#1c1c1c] text-yellow-300 p-5 flex flex-col items-center md:flex-row md:justify-between md:py-8 md:px-8">
       <div className="flex gap-3.5 mb-5 md:mb-0">
         {[FaFacebookF, FaInstagram, FaTwitter, FaAmazon, FaApple, FaSoundcloud, FaSpotify, FaYoutube].map((Icon, index) => (
           <a key={index} href="#" className="text-yellow-300 hover:text-white">

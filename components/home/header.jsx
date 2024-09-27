@@ -45,7 +45,7 @@ const HeaderComponent = () => {
   return (
     <>
       <div className="bg-gray-100 p-2.5 text-black fixed top-0 left-0 right-0 z-50">
-        <header className="flex h-[10vh] justify-between items-center p-8 relative">
+        <header className="flex h-[10vh] justify-between items-center p-5 md:p-8">
           <h1 className="text-black text-2xl font-bold">MOSTHEARDOF</h1>
           <button onClick={toggleMenu} className="bg-transparent border-none text-black text-2xl cursor-pointer md:hidden">☰</button>
           <nav className="hidden md:flex md:justify-end md:items-center">
