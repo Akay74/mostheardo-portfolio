@@ -1,8 +1,8 @@
 "use client"
 import React from 'react';
 import styled from 'styled-components';
-import Cap from '../../assets/cap.png';
-import Hoodie from '../../assets/hoodie.png';
+import Cap from '../../assets/cap.jpg';
+import Hoodie from '../../assets/hoodie.jpg';
 
 const ShopSection = styled.section`
   background-color: #1a1a1a;
