@@ -1,6 +1,8 @@
 "use client"
 import React from 'react';
 import styled from 'styled-components';
+import Cap from '../../assets/cap.png';
+import Hoodie from '../../assets/hoodie.png';
 
 const ShopSection = styled.section`
   background-color: #1a1a1a;
@@ -59,14 +61,14 @@ const Shop = () => {
     <ShopSection>
       <ProductGrid>
         <ProductCard>
-          <ProductImage src="/api/placeholder/300/300" alt="Collegegrove Dispensary Trucker Hat" />
+          <ProductImage src={Cap} alt="Collegegrove Dispensary Trucker Hat" />
           <ProductTitle>Collegegrove Dispensary Trucker Hat on Green</ProductTitle>
           <ProductPrice>$30.00</ProductPrice>
           <BuyButton>Buy Now</BuyButton>
         </ProductCard>
         
         <ProductCard>
-          <ProductImage src="/api/placeholder/300/300" alt="Collegegrove Photo Hoodie" />
+          <ProductImage src={Hoodie} alt="Collegegrove Photo Hoodie" />
           <ProductTitle>Collegegrove Photo Hoodie on Black</ProductTitle>
           <ProductPrice>$50.00</ProductPrice>
           <BuyButton>Buy Now</BuyButton>
