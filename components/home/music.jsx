@@ -1,118 +1,9 @@
 "use client"
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
 import Image from 'next/image';
 import TheseRicoTimes from '../../assets/theseRicoTimes.jpg';
 import Yeah from '../../assets/yeah.jpg';
-
-const Section = styled.section`
-  background-color: #121212;
-  color: #ffffff;
-  padding: 2rem;
-  @media (min-width: 768px) {
-    padding: 4rem 8rem;
-  }
-`;
-
-const Title = styled.h2`
-  color: #808080;
-  font-size: 16px;
-  font-weight: 700;
-  letter-spacing: 4px;
-  border-top: 2px solid #808080;
-  width: 30%;
-  padding-top: 10px;
-  margin-bottom: 5rem;
-  @media (min-width: 768px) {
-    width: 8%;
-    padding-top: 10px;
-    margin-bottom: 5rem;
-  }
-`;
-
-const AlbumGrid = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
-
-  @media (min-width: 768px) {
-    margin: auto;
-    flex-direction: row;
-    gap: 2rem;
-    justify-content: space-between;
-    width: 70%;
-  }
-`;
-
-const Album = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-
-  @media (min-width: 768px) {
-    width: 48%;
-    flex-direction: row;
-    align-items: flex-start;
-  }
-`;
-
-const AlbumCover = styled.div`
-  width: 100%;
-  max-width: 300px;
-  margin-bottom: 1rem;
-
-  @media (min-width: 768px) {
-    width: 50%;
-    margin-bottom: 0;
-    margin-right: 1rem;
-  }
-`;
-
-const AlbumInfo = styled.div`
-  text-align: center;
-
-  @media (min-width: 768px) {
-    text-align: left;
-  }
-`;
-
-const AlbumTitle = styled.h3`
-  font-size: 20px;
-  margin-bottom: 1rem;
-`;
-
-const StreamButton = styled.button`
-  background-color: transparent;
-  border: 1px solid #ccff00;
-  color: #ccff00;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  text-transform: uppercase;
-  font-size: 16px;
-  font-weight: bold;
-  letter-spacing: 1px;
-`;
-
-const ViewAllLink = styled.div`
-  text-align: right;
-  margin-top: 2rem;
-  @media (min-width: 768px) {
-    margin-top: 6rem;
-  }
-`;
-
-const StyledLink = styled(Link)`
-  color: #ccff00;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 1rem;
-  @media (min-width: 768px) {
-    font-size: 28px;
-    font-weight: bold;
-  }
-`;
 
 const MusicSection = () => {
   const albums = [
@@ -127,25 +18,31 @@ const MusicSection = () => {
   ];
 
   return (
-    <Section>
-      <Title>MUSIC</Title>
-      <AlbumGrid>
+    <section className="bg-[#121212] text-white p-8 md:p-16 lg:p-32">
+      <h2 className="text-gray-400 text-base font-bold tracking-[4px] border-t-2 border-gray-400 w-1/3 md:w-1/12 pt-2.5 mb-20">
+        MUSIC
+      </h2>
+      <div className="flex flex-col gap-16 md:flex-row md:justify-between md:w-4/5 md:mx-auto">
         {albums.map((album, index) => (
-          <Album key={index}>
-            <AlbumCover>
+          <div key={index} className="flex flex-col items-center w-full md:w-[48%] md:flex-row md:items-start">
+            <div className="w-full max-w-[300px] mb-4 md:w-1/2 md:mb-0 md:mr-4">
               <Image src={album.cover} alt={album.title} width={500} height={500} />
-            </AlbumCover>
-            <AlbumInfo>
-              <AlbumTitle>{album.title}</AlbumTitle>
-              <StreamButton>STREAM/DOWNLOAD</StreamButton>
-            </AlbumInfo>
-          </Album>
+            </div>
+            <div className="text-center md:text-left">
+              <h3 className="text-xl mb-4">{album.title}</h3>
+              <button className="bg-transparent border border-[#ccff00] text-[#ccff00] py-2 px-4 cursor-pointer uppercase text-base font-bold tracking-wide">
+                STREAM/DOWNLOAD
+              </button>
+            </div>
+          </div>
         ))}
-      </AlbumGrid>
-      <ViewAllLink>
-        <StyledLink href="/music">VIEW ALL</StyledLink>
-      </ViewAllLink>
-    </Section>
+      </div>
+      <div className="text-right mt-8 md:mt-24">
+        <Link href="/music" className="text-[#ccff00] no-underline uppercase text-base md:text-2xl md:font-bold">
+          VIEW ALL
+        </Link>
+      </div>
+    </section>
   );
 };
 

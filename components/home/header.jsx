@@ -1,102 +1,6 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { FaFacebookF, FaInstagram, FaTwitter, FaAmazon, FaApple, FaSoundcloud, FaSpotify, FaYoutube } from 'react-icons/fa';
-import styled from 'styled-components';
-
-const HeaderContainer = styled.div`
-  background-color: #F9F9F9;
-  padding: 10px;
-  color: #000;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-`;
-
-const Header = styled.header`
-  display: flex;
-  height: 10vh;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem;
-  position: relative;
-`;
-
-const Logo = styled.h1`
-  color: #000;
-  font-size: 24px;
-  font-weight: bold;
-`;
-
-const MenuButton = styled.button`
-  background: none;
-  border: none;
-  color: #000;
-  font-size: 24px;
-  cursor: pointer;
-  @media (min-width: 768px) {
-    display: none;
-  }
-`;
-
-const MobileNavigation = styled.nav`
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: #000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(-100%)')};
-  transition: transform 0.3s ease-in-out;
-  z-index: 1001;
-  @media (min-width: 768px) {
-    display: none;
-  }
-`;
-
-const DesktopNavigation = styled.nav`
-  display: none;
-  @media (min-width: 768px) {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-`;
-
-const NavLink = styled.a`
-  color: ${props => props.isMobile ? '#ffff00' : '#000'};
-  text-decoration: none;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: ${props => props.isMobile ? '24px' : '16px'};
-  margin: ${props => props.isMobile ? '20px 0' : '0 0 0 20px'};
-`;
-
-const SocialIcons = styled.div`
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  @media (min-width: 768px) {
-    position: fixed;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    flex-direction: column;
-    height: auto;
-    z-index: 999;
-  }
-`;
-
-const IconLink = styled.a`
-  color: ${props => props.isMobile ? '#ffff00' : '#000'};
-  font-size: ${props => props.isMobile ? '20px' : '30px'};
-  margin: ${props => props.isMobile ? '0 10px' : '10px 0'};
-`;
 
 const HeaderComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -118,41 +22,41 @@ const HeaderComponent = () => {
 
   const NavLinks = ({ isMobile, onClick }) => (
     <>
-      <NavLink href="#" onClick={onClick} isMobile={isMobile}>MUSIC</NavLink>
-      <NavLink href="#" onClick={onClick} isMobile={isMobile}>VIDEOS</NavLink>
-      <NavLink href="#" onClick={onClick} isMobile={isMobile}>SHOP</NavLink>
-      <NavLink href="#" onClick={onClick} isMobile={isMobile}>CONTACT</NavLink>
+      <a href="#" onClick={onClick} className={`font-bold uppercase ${isMobile ? 'text-2xl my-5 text-yellow-300' : 'text-base ml-5 text-black'}`}>MUSIC</a>
+      <a href="#" onClick={onClick} className={`font-bold uppercase ${isMobile ? 'text-2xl my-5 text-yellow-300' : 'text-base ml-5 text-black'}`}>VIDEOS</a>
+      <a href="#" onClick={onClick} className={`font-bold uppercase ${isMobile ? 'text-2xl my-5 text-yellow-300' : 'text-base ml-5 text-black'}`}>SHOP</a>
+      <a href="#" onClick={onClick} className={`font-bold uppercase ${isMobile ? 'text-2xl my-5 text-yellow-300' : 'text-base ml-5 text-black'}`}>CONTACT</a>
     </>
   );
 
   const SocialIconsComponent = ({ isMobile }) => (
-    <SocialIcons>
-      <IconLink href="#" isMobile={isMobile}><FaFacebookF /></IconLink>
-      <IconLink href="#" isMobile={isMobile}><FaInstagram /></IconLink>
-      <IconLink href="#" isMobile={isMobile}><FaTwitter /></IconLink>
-      <IconLink href="#" isMobile={isMobile}><FaAmazon /></IconLink>
-      <IconLink href="#" isMobile={isMobile}><FaApple /></IconLink>
-      <IconLink href="#" isMobile={isMobile}><FaSoundcloud /></IconLink>
-      <IconLink href="#" isMobile={isMobile}><FaSpotify /></IconLink>
-      <IconLink href="#" isMobile={isMobile}><FaYoutube /></IconLink>
-    </SocialIcons>
+    <div className={`flex ${isMobile ? 'justify-center p-5' : 'flex-col fixed left-5 top-1/2 -translate-y-1/2 z-50'}`}>
+      <a href="#" className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaFacebookF /></a>
+      <a href="#" className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaInstagram /></a>
+      <a href="#" className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaTwitter /></a>
+      <a href="#" className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaAmazon /></a>
+      <a href="#" className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaApple /></a>
+      <a href="#" className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaSoundcloud /></a>
+      <a href="#" className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaSpotify /></a>
+      <a href="#" className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaYoutube /></a>
+    </div>
   );
 
   return (
     <>
-      <HeaderContainer>
-        <Header>
-          <Logo>MOSTHEARDOF</Logo>
-          <MenuButton onClick={toggleMenu}>☰</MenuButton>
-          <DesktopNavigation>
+      <div className="bg-gray-100 p-2.5 text-black fixed top-0 left-0 right-0 z-50">
+        <header className="flex h-[10vh] justify-between items-center p-8 relative">
+          <h1 className="text-black text-2xl font-bold">MOSTHEARDOF</h1>
+          <button onClick={toggleMenu} className="bg-transparent border-none text-black text-2xl cursor-pointer md:hidden">☰</button>
+          <nav className="hidden md:flex md:justify-end md:items-center">
             <NavLinks isMobile={false} />
-          </DesktopNavigation>
-        </Header>
-        <MobileNavigation isOpen={isMenuOpen}>
+          </nav>
+        </header>
+        <nav className={`fixed top-0 left-0 w-full h-screen bg-black flex flex-col justify-center items-center transform ${isMenuOpen ? 'translate-x-0' : '-translate-x-full'} transition-transform duration-300 ease-in-out z-[1001] md:hidden`}>
           <NavLinks isMobile={true} onClick={toggleMenu} />
           <SocialIconsComponent isMobile={true} />
-        </MobileNavigation>
-      </HeaderContainer>
+        </nav>
+      </div>
       {!isMobile && <SocialIconsComponent isMobile={false} />}
     </>
   );
