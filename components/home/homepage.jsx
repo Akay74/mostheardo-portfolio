@@ -1,6 +1,7 @@
 import Hero from "./hero";
 import MusicSection from "./music";
 import VideoSection from "./videos";
+import Shop from "./shop";
 
 
 export default function Homepage() {
@@ -9,6 +10,7 @@ export default function Homepage() {
       <Hero />
       <MusicSection />
       <VideoSection />
+      <Shop />
     </main>
   );
 }
