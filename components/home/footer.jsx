@@ -1,7 +1,6 @@
 "use client"
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
 import { FaFacebookF, FaInstagram, FaTwitter, FaAmazon, FaApple, FaSoundcloud, FaSpotify, FaYoutube } from 'react-icons/fa';
 
 const FooterContainer = styled.footer`
@@ -11,7 +10,6 @@ const FooterContainer = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
-
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;
@@ -23,22 +21,23 @@ const SocialIcons = styled.div`
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
-
   @media (min-width: 768px) {
     margin-bottom: 0;
   }
 `;
 
-const Icon = styled(Image)`
-  width: 24px;
-  height: 24px;
+const IconLink = styled.a`
+  color: #ffff00;
+  text-decoration: none;
+  &:hover {
+    color: #ffffff;
+  }
 `;
 
 const FooterText = styled.div`
   font-size: 12px;
   text-align: center;
   margin-bottom: 20px;
-
   @media (min-width: 768px) {
     margin-bottom: 0;
     text-align: right;
@@ -49,7 +48,6 @@ const Link = styled.a`
   color: #ffff00;
   text-decoration: none;
   margin-left: 5px;
-
   &:hover {
     text-decoration: underline;
   }
@@ -62,7 +60,6 @@ const CookieConsent = styled.div`
   border-radius: 5px;
   font-size: 12px;
   cursor: pointer;
-
   @media (min-width: 768px) {
     margin-left: 20px;
   }
@@ -72,14 +69,14 @@ const Footer = () => {
   return (
     <FooterContainer>
       <SocialIcons>
-        <Icon href="#"><FaFacebookF /></Icon>
-        <Icon href="#"><FaInstagram /></Icon>
-        <Icon href="#"><FaTwitter /></Icon>
-        <Icon href="#"><FaAmazon /></Icon>
-        <Icon href="#"><FaApple /></Icon>
-        <Icon href="#"><FaSoundcloud /></Icon>
-        <Icon href="#"><FaSpotify /></Icon>
-        <Icon href="#"><FaYoutube /></Icon>
+        <IconLink href="#"><FaFacebookF size={24} /></IconLink>
+        <IconLink href="#"><FaInstagram size={24} /></IconLink>
+        <IconLink href="#"><FaTwitter size={24} /></IconLink>
+        <IconLink href="#"><FaAmazon size={24} /></IconLink>
+        <IconLink href="#"><FaApple size={24} /></IconLink>
+        <IconLink href="#"><FaSoundcloud size={24} /></IconLink>
+        <IconLink href="#"><FaSpotify size={24} /></IconLink>
+        <IconLink href="#"><FaYoutube size={24} /></IconLink>
       </SocialIcons>
       <FooterText>
         © 2024 OGMK RECORDS
