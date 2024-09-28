@@ -1,27 +1,32 @@
 "use client"
 import React, { useState } from 'react';
 import Image from 'next/image';
+import TRT from '../../assets/theseRicoTimes.jpg';
+import RoiBkt from '@/assets/roibktht.jpg';
+import RoiBkt2 from '@/assets/roibktht2.jpg';
+import RoiSt from '@/assets/roisit.jpg';
+import RoiSt2 from '@/assets/roisit2.jpg';
+import RoiSt3 from '@/assets/roisit3.jpg';
+import RoiStnd from '@/assets/roistnd.jpg';
 import { ChevronRight } from 'lucide-react';
 
 const MusicPage = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const carouselItems = [
     {
-      image: '/images/welcome2collegegrove.jpg',
-      title: 'WELCOME 2 COLLEGROVE',
+      image: TRT,
+      title: 'THESE RICO TIMES',
       actionText: 'STREAM/DOWNLOAD'
     },
     // Add more carousel items here
   ];
   const albumList = [
-    '/images/welcome2collegegrove.jpg',
-    '/images/cigarettes.jpg',
-    '/images/explosion.jpg',
-    '/images/2step.jpg',
-    '/images/its2chainz.jpg',
-    '/images/redcrystal.jpg',
-    '/images/popmusic.jpg',
-    '/images/teeth.jpg',
+    RoiBkt,
+    RoiBkt2,
+    RoiSt,
+    RoiSt2,
+    RoiSt3,
+    RoiStnd
   ];
 
   return (
