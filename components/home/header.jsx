@@ -59,7 +59,7 @@ const HeaderComponent = () => {
       </header>
       {!isMobile && <SocialIconsComponent isMobile={false} />}
       {/* Add a spacer div to push content below the header */}
-      <div className="h-[calc(5vh+40px)] md:h-[calc(5vh+64px)]"></div>
+      <div className="h-[calc(5vh+0px)] md:h-[calc(5vh+0px)]"></div>
     </>
   );
 };
