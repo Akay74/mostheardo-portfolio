@@ -1,11 +1,10 @@
 import React from 'react';
-import { FaFacebookF, FaInstagram, FaTwitter, FaAmazon, FaApple, FaSoundcloud, FaSpotify, FaYoutube } from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter, FaApple, FaSoundcloud, FaSpotify, FaYoutube } from 'react-icons/fa';
 
 const socialIcons = [
   { Icon: FaFacebookF, href: "https://www.facebook.com/mostheardof?mibextid=LQQJ4d" },
   { Icon: FaInstagram, href: "https://www.instagram.com/mostheardof?igsh=eHc5ejloNnY3MzQ1" },
   { Icon: FaTwitter, href: "https://x.com/roi_iiii?s=21&t=c1irIz4BZtavX3lSYpAO4g" },
-  { Icon: FaAmazon, href: "https://www.amazon.com/music/ogmkrecords" },
   { Icon: FaApple, href: "https://music.apple.com/us/artist/ogmkrecords" },
   { Icon: FaSoundcloud, href: "https://soundcloud.com/ogmkrecords" },
   { Icon: FaSpotify, href: "https://open.spotify.com/artist/3CYXIXCQmsAsqHbolfiuc2?si=Fc6llAUMQ9GxLxswAhADHg" },
