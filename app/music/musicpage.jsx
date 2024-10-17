@@ -5,8 +5,7 @@ import TRT from '../../assets/theseRicoTimes.jpg';
 import RoiBkt from '@/assets/roibktht.jpg';
 import RoiBkt2 from '@/assets/roibktht2.jpg';
 import RoiSt from '@/assets/roisit.jpg';
-import RoiSt2 from '@/assets/roisit2.jpg';
-import RoiSt3 from '@/assets/roisit3.jpg';
+import Link from 'next/link';
 import RoiStnd from '@/assets/roistnd.jpg';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -35,12 +34,14 @@ const MusicPage = () => {
     },
   ];
   const albumList = [
-    RoiBkt,
-    RoiBkt2,
-    RoiSt,
-    RoiSt2,
-    RoiSt3,
-    RoiStnd
+    { src: RoiBkt, alt: 'Rico' },
+    { src: RoiBkt2, alt: 'Rico 2' },
+    { src: RoiStnd, alt: 'Roi Stand' },
+    { src: RoiBkt, alt: 'Rico' },
+    { src: RoiBkt2, alt: 'Rico 2' },
+    { src: RoiStnd, alt: 'Roi Stand' },
+    { src: RoiBkt, alt: 'Rico' },
+    { src: RoiBkt2, alt: 'Rico 2' }
   ];
 
   const handlePrevSlide = () => {
@@ -54,7 +55,7 @@ const MusicPage = () => {
   return (
     <div className="bg-black text-white min-h-screen flex flex-col">
       {/* Carousel Section */}
-      <div className="relative h-screen flex-shrink-0">
+      <div className="relative h-[95vh] flex-shrink-0">
         {carouselItems.map((item, index) => (
           <div
             key={index}
@@ -105,16 +106,19 @@ const MusicPage = () => {
       <div className="flex-grow overflow-y-auto p-4">
         <div className="flex flex-wrap justify-center">
           {albumList.map((album, index) => (
-            <div key={index} className="w-1/2 md:w-1/3 lg:w-1/4 p-2">
-              <div className="aspect-w-1 aspect-h-1 relative">
-                <Image
-                  src={album}
-                  alt={`Album ${index + 1}`}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
-                />
-              </div>
+            <div key={index} className="w-1/1 md:w-1/3 lg:w-1/4 p-2">
+              <Link href="/music" passHref>
+                <div className="aspect-w-1 aspect-h-1 relative cursor-pointer">
+                  <Image
+                    src={album.src}
+                    alt={album.alt}
+                    width={300}
+                    height={300}
+                    objectFit="cover"
+                    className="rounded-lg transition-transform duration-300 hover:scale-105"
+                  />
+                </div>
+              </Link>
             </div>
           ))}
         </div>
