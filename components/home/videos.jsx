@@ -35,7 +35,7 @@ const VideoSection = () => {
       {/* Content */}
       <div className="relative z-20">
         <h2 className="text-gray-400 text-base font-bold tracking-[4px] border-t-2 border-gray-400 w-1/3 md:w-1/12 pt-2.5 mb-20">
-          VIDEO
+          VIDEOS
         </h2>
         <div className="flex flex-col gap-16 md:flex-row md:justify-between md:w-4/5 md:mx-auto">
           {albums.map((album, index) => (
@@ -53,7 +53,7 @@ const VideoSection = () => {
           ))}
         </div>
         <div className="text-right mt-8 md:mt-24">
-          <Link href="/video" className="text-[#ccff00] no-underline uppercase text-base md:text-2xl md:font-bold">
+          <Link href="/videos" className="text-[#ccff00] no-underline uppercase text-base md:text-2xl md:font-bold">
             VIEW ALL
           </Link>
         </div>
