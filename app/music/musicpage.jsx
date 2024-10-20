@@ -112,17 +112,17 @@ const MusicPage = () => {
       </div>
 
       {/* Album List Section */}
-      <div className="flex-grow overflow-y-auto p-4">
+      <div className="flex-grow overflow-y-auto px-20 py-12">
         <div className="flex flex-wrap justify-center">
           {albumList.map((album, index) => (
             <div key={index} className="w-1/1 md:w-1/3 lg:w-1/4 p-2">
               <Link href="/music" passHref>
-                <div className="aspect-w-1 aspect-h-1 relative cursor-pointer">
+                <div className="aspect-w-1 aspect-h-1 relative cursor-pointer mb-4">
                   <Image
                     src={album.src}
                     alt={album.alt}
-                    width={300}
-                    height={300}
+                    width={250}
+                    height={250}
                     objectFit="cover"
                     className="rounded-lg transition-transform duration-300 hover:scale-105"
                   />
