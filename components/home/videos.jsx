@@ -45,9 +45,12 @@ const VideoSection = () => {
               </div>
               <div className="text-center md:text-left">
                 <h3 className="text-xl mb-4">{album.title}</h3>
-                <button className="bg-transparent border border-[#ccff00] text-[#ccff00] py-2 px-4 cursor-pointer uppercase text-base font-bold tracking-wide">
-                  STREAM/DOWNLOAD
-                </button>
+                <a 
+                  href="/your-video-link" 
+                  className="inline-block bg-transparent border border-[#ccff00] text-[#ccff00] py-2 px-4 cursor-pointer uppercase text-base font-bold tracking-wide transition-all duration-300 hover:bg-[#ccff00] hover:text-black"
+                >
+                  WATCH VIDEO
+                </a>
               </div>
             </div>
           ))}

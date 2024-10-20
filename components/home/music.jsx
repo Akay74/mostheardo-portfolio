@@ -10,10 +10,12 @@ const MusicSection = () => {
     {
       title: "THESE RICO TIMES",
       cover: TheseRicoTimes,
+      link: "https://ditto.fm/these-rico-times"
     },
     {
-      title: "YEAH",
+      title: "GOODI MAN",
       cover: Yeah,
+      link: "https://ditto.fm/these-rico-times"
     },
   ];
 
@@ -30,9 +32,13 @@ const MusicSection = () => {
             </div>
             <div className="text-center md:text-left">
               <h3 className="text-xl mb-4">{album.title}</h3>
-              <button className="bg-transparent border border-[#ccff00] text-[#ccff00] py-2 px-4 cursor-pointer uppercase text-base font-bold tracking-wide">
+              <a 
+                href={album.link}
+                target="_blank"
+                className="inline-block bg-transparent border border-[#ccff00] text-[#ccff00] py-2 px-4 cursor-pointer uppercase text-base font-bold tracking-wide transition-all duration-300 hover:bg-[#ccff00] hover:text-black"
+              >
                 STREAM/DOWNLOAD
-              </button>
+              </a>
             </div>
           </div>
         ))}

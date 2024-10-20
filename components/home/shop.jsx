@@ -21,9 +21,12 @@ const Shop = () => {
             OGMK Baseball Hat
           </h3>
           <p className="mt-1.5 mb-1.5 font-bold">₦5,000</p>
-          <button className="bg-yellow-300 text-black border-none py-2.5 px-5 cursor-pointer uppercase font-bold mt-2.5">
+          <a 
+            href="/shop" 
+            className="inline-block bg-[#ccff00] text-black border-[1px] border-transparent py-2.5 px-5 cursor-pointer uppercase font-bold mt-2.5 transition-all duration-300 hover:bg-transparent hover:border-[#ccff00] hover:text-[#ccff00]"
+          >
             Buy Now
-          </button>
+          </a>
         </div>
         
         <div className="flex flex-col items-center text-center">
@@ -38,9 +41,12 @@ const Shop = () => {
             OGMK Hoodie
           </h3>
           <p className="mt-1.5 mb-1.5 font-bold">₦25,000</p>
-          <button className="bg-yellow-300 text-black border-none py-2.5 px-5 cursor-pointer uppercase font-bold mt-2.5">
+          <a 
+            href="/shop" 
+            className="inline-block bg-[#ccff00] text-black border-[1px] border-transparent py-2.5 px-5 cursor-pointer uppercase font-bold mt-2.5 transition-all duration-300 hover:bg-transparent hover:border-[#ccff00] hover:text-[#ccff00]"
+          >
             Buy Now
-          </button>
+          </a>
         </div>
       </div>
       <div className="text-right mt-8 md:mt-24">
