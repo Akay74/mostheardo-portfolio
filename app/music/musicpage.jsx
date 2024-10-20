@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import TRT from '../../assets/theseRicoTimes.jpg';
+import Yeah from '../../assets/yeah.jpg';
 import RoiBkt from '@/assets/roibktht.jpg';
 import RoiBkt2 from '@/assets/roibktht2.jpg';
 import RoiSt from '@/assets/roisit.jpg';
@@ -15,28 +16,32 @@ const MusicPage = () => {
     {
       image: TRT,
       title: 'THESE RICO TIMES',
-      actionText: 'STREAM/DOWNLOAD'
+      actionText: 'STREAM/DOWNLOAD',
+      link: "https://ditto.fm/these-rico-times"
     },
     {
       image: RoiBkt,
-      title: 'THESE RICO TIMES',
-      actionText: 'STREAM/DOWNLOAD'
+      title: 'THC',
+      actionText: 'STREAM/DOWNLOAD',
+      link: "https://ditto.fm/these-rico-times"
     },
     {
       image: RoiBkt2,
-      title: 'THESE RICO TIMES',
-      actionText: 'STREAM/DOWNLOAD'
+      title: 'GOODIE MAN',
+      actionText: 'STREAM/DOWNLOAD',
+      link: "https://ditto.fm/these-rico-times"
     },
     {
       image: RoiSt,
-      title: 'THESE RICO TIMES',
-      actionText: 'STREAM/DOWNLOAD'
+      title: 'YEAH',
+      actionText: 'STREAM/DOWNLOAD',
+      link: "https://ditto.fm/these-rico-times"
     },
   ];
   const albumList = [
     { src: RoiBkt, alt: 'Rico' },
     { src: RoiBkt2, alt: 'Rico 2' },
-    { src: RoiStnd, alt: 'Roi Stand' },
+    { src: Yeah, alt: 'Yeah music art' },
     { src: RoiBkt, alt: 'Rico' },
     { src: RoiBkt2, alt: 'Rico 2' },
     { src: RoiStnd, alt: 'Roi Stand' },
@@ -71,9 +76,13 @@ const MusicPage = () => {
             />
             <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-end p-8">
               <h2 className="text-2xl font-bold mb-4">{item.title}</h2>
-              <button className="bg-transparent border border-yellow-400 text-yellow-400 py-2 px-4 uppercase font-bold tracking-wide w-max">
-                {item.actionText}
-              </button>
+              <a 
+                href={item.link}
+                target="_blank"
+                className="inline-block w-[18%] text-center bg-transparent border border-[#ccff00] text-[#ccff00] py-2 px-4 cursor-pointer text-base font-bold tracking-wide transition-all duration-300 hover:bg-[#ccff00] hover:text-black"
+              >
+                STREAM/DOWNLOAD
+              </a>
             </div>
           </div>
         ))}
