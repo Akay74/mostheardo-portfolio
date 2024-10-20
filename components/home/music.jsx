@@ -13,7 +13,7 @@ const MusicSection = () => {
       link: "https://ditto.fm/these-rico-times"
     },
     {
-      title: "GOODI MAN",
+      title: "GOODIE MAN",
       cover: Yeah,
       link: "https://ditto.fm/these-rico-times"
     },

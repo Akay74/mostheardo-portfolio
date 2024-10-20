@@ -43,7 +43,7 @@ const VideosPage = () => {
   const [playingVideoId, setPlayingVideoId] = useState(null);
 
   const mainVideoId = "gi3iUIqBqylodN3w";
-  const mainVideoTitle = "R O I - GOODI MAN";
+  const mainVideoTitle = "R O I - GOODIE MAN";
 
   const videoCards = [
     { id: "video1", thumbnail: vid1, title: "Video 1", videoId: "gi3iUIqBqylodN3w" },
