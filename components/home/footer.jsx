@@ -14,19 +14,19 @@ const socialIcons = [
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1c1c1c] text-yellow-300 p-5 flex flex-col items-center md:flex-row md:justify-between md:py-8 md:px-8">
+    <footer className="bg-[#1c1c1c] text-[#ccff00] p-5 flex flex-col items-center md:flex-row md:justify-between md:py-8 md:px-8">
       <div className="flex gap-3.5 mb-5 md:mb-0">
         {socialIcons.map(({ Icon, href }, index) => (
-          <a key={index} href={href} target="_blank" rel="noopener noreferrer" className="text-yellow-300 hover:text-white">
+          <a key={index} href={href} target="_blank" rel="noopener noreferrer" className="text-[#ccff00] hover:text-white">
             <Icon size={30} />
           </a>
         ))}
       </div>
       <div className="text-xs text-bold text-center mb-5 md:mb-0 md:text-right">
         © 2024 OGMK RECORDS
-        <a href="/terms" target="_blank" className="text-yellow-300 no-underline ml-1.5 hover:underline">TERMS & CONDITIONS</a> /
-        <a href="/why-music-matters" target="_blank" className="text-yellow-300 no-underline ml-1.5 hover:underline">WHY MUSIC MATTERS</a> /
-        <a href="/privacy" target="_blank" className="text-yellow-300 no-underline ml-1.5 hover:underline">PRIVACY POLICY</a>
+        <a href="/terms" target="_blank" className="no-underline ml-1.5 hover:underline">TERMS & CONDITIONS</a> /
+        <a href="/why-music-matters" target="_blank" className="no-underline ml-1.5 hover:underline">WHY MUSIC MATTERS</a> /
+        <a href="/privacy" target="_blank" className="no-underline ml-1.5 hover:underline">PRIVACY POLICY</a>
       </div>
     </footer>
   );

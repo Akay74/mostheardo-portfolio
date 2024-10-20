@@ -22,22 +22,22 @@ const HeaderComponent = () => {
 
   const NavLinks = ({ isMobile, onClick }) => (
     <>
-      <a href="/music" onClick={onClick} className={`font-bold uppercase ${isMobile ? 'text-2xl my-5 text-yellow-300' : 'text-base ml-5 text-black'}`}>MUSIC</a>
-      <a href="/videos" onClick={onClick} className={`font-bold uppercase ${isMobile ? 'text-2xl my-5 text-yellow-300' : 'text-base ml-5 text-black'}`}>VIDEOS</a>
-      <a href="/shop" onClick={onClick} className={`font-bold uppercase ${isMobile ? 'text-2xl my-5 text-yellow-300' : 'text-base ml-5 text-black'}`}>SHOP</a>
-      <a href="#" onClick={onClick} className={`font-bold uppercase ${isMobile ? 'text-2xl my-5 text-yellow-300' : 'text-base ml-5 text-black'}`}>CONTACT</a>
+      <a href="/music" onClick={onClick} className={`font-bold uppercase ${isMobile ? 'text-2xl my-5 text-[#ccff00]' : 'text-base ml-5 text-black'}`}>MUSIC</a>
+      <a href="/videos" onClick={onClick} className={`font-bold uppercase ${isMobile ? 'text-2xl my-5 text-[#ccff00]' : 'text-base ml-5 text-black'}`}>VIDEOS</a>
+      <a href="/shop" onClick={onClick} className={`font-bold uppercase ${isMobile ? 'text-2xl my-5 text-[#ccff00]' : 'text-base ml-5 text-black'}`}>SHOP</a>
+      <a href="#" onClick={onClick} className={`font-bold uppercase ${isMobile ? 'text-2xl my-5 text-[#ccff00]' : 'text-base ml-5 text-black'}`}>CONTACT</a>
     </>
   );
 
   const SocialIconsComponent = ({ isMobile }) => (
     <div className={`flex ${isMobile ? 'justify-center p-5' : 'flex-col fixed left-5 top-1/2 -translate-y-1/2 z-50'}`}>
-      <a href="https://www.facebook.com/mostheardof?mibextid=LQQJ4d" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaFacebookF /></a>
-      <a href="https://www.instagram.com/mostheardof?igsh=eHc5ejloNnY3MzQ1" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaInstagram /></a>
-      <a href="https://x.com/roi_iiii?s=21&t=c1irIz4BZtavX3lSYpAO4g" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaTwitter /></a>
-      <a href="https://music.apple.com/ng/artist/r-o-i/1515339754" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaApple /></a>
-      <a href="https://www.deezer.com/us/artist/95884522" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaDeezer /></a>
-      <a href="https://open.spotify.com/artist/3CYXIXCQmsAsqHbolfiuc2?si=Fc6llAUMQ9GxLxswAhADHg" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaSpotify /></a>
-      <a href="https://youtube.com/@roii1?si=sCFV-ik3qa-fcpJH" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-yellow-300' : 'my-2.5 text-3xl text-black'}`}><FaYoutube /></a>
+      <a href="https://www.facebook.com/mostheardof?mibextid=LQQJ4d" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-[#ccff00]' : 'my-2.5 text-3xl text-black hover:text-[#ccff00]'}`}><FaFacebookF /></a>
+      <a href="https://www.instagram.com/mostheardof?igsh=eHc5ejloNnY3MzQ1" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-[#ccff00]' : 'my-2.5 text-3xl text-black hover:text-[#ccff00]'}`}><FaInstagram /></a>
+      <a href="https://x.com/roi_iiii?s=21&t=c1irIz4BZtavX3lSYpAO4g" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-[#ccff00]' : 'my-2.5 text-3xl text-black hover:text-[#ccff00]'}`}><FaTwitter /></a>
+      <a href="https://music.apple.com/ng/artist/r-o-i/1515339754" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-[#ccff00]' : 'my-2.5 text-3xl text-black hover:text-[#ccff00]'}`}><FaApple /></a>
+      <a href="https://www.deezer.com/us/artist/95884522" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-[#ccff00]' : 'my-2.5 text-3xl text-black hover:text-[#ccff00]'}`}><FaDeezer /></a>
+      <a href="https://open.spotify.com/artist/3CYXIXCQmsAsqHbolfiuc2?si=Fc6llAUMQ9GxLxswAhADHg" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-[#ccff00]' : 'my-2.5 text-3xl text-black hover:text-[#ccff00]'}`}><FaSpotify /></a>
+      <a href="https://youtube.com/@roii1?si=sCFV-ik3qa-fcpJH" target='_blank' className={`${isMobile ? 'mx-2.5 text-xl text-[#ccff00]' : 'my-2.5 text-3xl text-black hover:text-[#ccff00]'}`}><FaYoutube /></a>
     </div>
   );
 
