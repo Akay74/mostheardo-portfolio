@@ -50,14 +50,16 @@ const VideosPage = () => {
     { id: "video2", thumbnail: vid2, title: "Video 2", videoId: "7fOMhk2BPjBh83UW" },
     { id: "video3", thumbnail: vid3, title: "Video 3", videoId: "Yid3eFDMgVW26lIY" },
     { id: "video4", thumbnail: vid4, title: "Video 4", videoId: "JBVB5YuW3IxEPZJq" },
-    { id: "video3", thumbnail: vid5, title: "Video 3", videoId: "s8gtmwCPW2w4_n0O" },
-    { id: "video4", thumbnail: vid6, title: "Video 4", videoId: "zM5OnVz1bem20ET9" },
+    { id: "video3", thumbnail: vid5, title: "Video 5", videoId: "s8gtmwCPW2w4_n0O" },
+    { id: "video4", thumbnail: vid6, title: "Video 6", videoId: "zM5OnVz1bem20ET9" },
+    { id: "video2", thumbnail: vid2, title: "Video 2", videoId: "7fOMhk2BPjBh83UW" },
+    { id: "video3", thumbnail: vid3, title: "Video 3", videoId: "Yid3eFDMgVW26lIY" },
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <div className="mb-12">
-        <div className="aspect-w-16 aspect-h-9 mb-4">
+    <div className="mx-auto px-4 py-8">
+      <div className="mb-12 md:flex justify-between h-screen">
+        <div className=" mb-4 md:w-[50%]">
           <iframe
             src={`https://www.youtube.com/embed/${mainVideoId}`}
             allow="autoplay; encrypted-media"
