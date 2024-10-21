@@ -58,7 +58,7 @@ const VideosPage = () => {
 
   return (
     <div className="py-8">
-      <div className="bg-black p-24 mb-12 md:flex flex-start h-screen">
+      <div className="bg-black p-4 md:p-24 md:mb-12 md:flex flex-start h-auto md:h-screen">
         <div className=" mb-4 md:w-[55%]">
           <iframe
             src={`https://www.youtube.com/embed/${mainVideoId}`}
@@ -67,10 +67,10 @@ const VideosPage = () => {
             className="w-full h-full"
           ></iframe>
         </div>
-        <h2 className="text-2xl font-bold text-white m-auto">{mainVideoTitle}</h2>
+        <h2 className="text-xl md:text-2xl text-center py-4 md:py-0 font-bold text-white md:m-auto">{mainVideoTitle}</h2>
       </div>
 
-      <div className="m-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      <div className="mx-4 my-10 md:m-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {videoCards.map((video) => (
           <VideoCard
             key={video.id}
