@@ -20,6 +20,7 @@ const NavLinks = React.memo(({ isMobile, onClick }) => (
     ))}
   </>
 ));
+NavLinks.displayName = 'NavLinks';
 
 const SocialIconsComponent = React.memo(({ isMobile }) => {
   const socialIcons = [
@@ -52,6 +53,7 @@ const SocialIconsComponent = React.memo(({ isMobile }) => {
     </div>
   );
 });
+SocialIconsComponent.displayName = 'SocialIconsComponent';
 
 const HeaderComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
