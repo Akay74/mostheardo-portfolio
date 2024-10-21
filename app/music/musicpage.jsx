@@ -6,6 +6,9 @@ import Yeah from '../../assets/yeah.jpg';
 import RoiBkt from '@/assets/roibktht.jpg';
 import RoiBkt2 from '@/assets/roibktht2.jpg';
 import RoiSt from '@/assets/roisit.jpg';
+import RoiCover from '@/assets/roi-cover.jpg';
+import RoiMag from '@/assets/roi-mag.jpg';
+import RoiShades from '@/assets/vidbg.jpg';
 import Link from 'next/link';
 import RoiStnd from '@/assets/roistnd.jpg';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -39,11 +42,11 @@ const MusicPage = () => {
     },
   ];
   const albumList = [
-    { src: RoiBkt, alt: 'Rico' },
+    { src: RoiCover, alt: 'Roi magazine cover' },
     { src: RoiBkt2, alt: 'Rico 2' },
     { src: Yeah, alt: 'Yeah music art' },
-    { src: RoiBkt, alt: 'Rico' },
-    { src: RoiBkt2, alt: 'Rico 2' },
+    { src: RoiShades, alt: 'Roi wearing shades' },
+    { src: RoiMag, alt: 'Roi on magazine' },
     { src: RoiStnd, alt: 'Roi Stand' },
     { src: RoiBkt, alt: 'Rico' },
     { src: RoiBkt2, alt: 'Rico 2' }
@@ -112,12 +115,12 @@ const MusicPage = () => {
       </div>
 
       {/* Album List Section */}
-      <div className="flex-grow overflow-y-auto px-20 py-12">
+      <div className="flex-grow overflow-y-auto md:px-20 py-12">
         <div className="flex flex-wrap justify-center">
           {albumList.map((album, index) => (
             <div key={index} className="w-1/1 md:w-1/3 lg:w-1/4 p-2">
               <Link href="/music" passHref>
-                <div className="aspect-w-1 aspect-h-1 relative cursor-pointer mb-4">
+                <div className="aspect-w-1 aspect-h-1 relative cursor-pointer md:mb-4">
                   <Image
                     src={album.src}
                     alt={album.alt}
