@@ -7,7 +7,7 @@ const NavLinks = React.memo(({ isMobile, onClick }) => (
     {['MUSIC', 'VIDEOS', 'SHOP', 'CONTACT'].map((item) => (
       <a
         key={item}
-        href={item === 'CONTACT' ? '#' : `/${item.toLowerCase()}`}
+        href={item === 'CONTACT' ? 'mailto:akaudeh@gmail.com?subject=Work with me&body=Hello, Roi' : `/${item.toLowerCase()}`}
         onClick={onClick}
         className={`font-bold uppercase ${
           isMobile
