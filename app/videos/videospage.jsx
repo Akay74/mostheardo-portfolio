@@ -22,14 +22,14 @@ const VideoCard = ({ thumbnail, title, videoId, onPlay }) => (
 
 const YouTubePlayer = ({ videoId, onClose }) => (
   <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
-    <div className="relative h-full w-full max-w-4xl">
+    <div className="relative w-full max-w-4xl">
       <button
         onClick={onClose}
         className="absolute -top-10 right-0 text-white hover:text-gray-300"
       >
         <X size={24} />
       </button>
-      <div className="aspect-w-16">
+      <div className="aspect-w-16 h-[60vh] md:h-[80vh]">
         <iframe
           src={`https://www.youtube.com/embed/${videoId}`}
           allow="autoplay; encrypted-media"
