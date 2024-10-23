@@ -9,12 +9,14 @@ import BgImage from '../../assets/vidbg.jpg'; // Make sure to add this image to 
 const VideoSection = () => {
   const albums = [
     {
-      title: "THESE RICO TIMES",
-      cover: TheseRicoTimes,
+      title: "THC",
+      cover: Thc,
+      link: "https://youtu.be/bv8a5OuQztE?si=zaz5Eho0SqSmasXU"
     },
     {
-      title: "YEAH",
-      cover: Yeah,
+      title: "GOODIE MAN",
+      cover: Goodie,
+      link: "https://youtu.be/lYJA0iEyISg?si=0_YQhDafmJzRwbUP"
     },
   ];
 
