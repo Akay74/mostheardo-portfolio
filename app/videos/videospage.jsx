@@ -8,6 +8,8 @@ import vid3 from '../../assets/vid3.jpg';
 import vid4 from '../../assets/vid4.jpg';
 import vid5 from '../../assets/vid5.jpg';
 import vid6 from '../../assets/vid6.jpg';
+import Dice from '../../assets/dice-vid.jpg';
+import Street from '../../assets/street-codes.jpg';
 
 const VideoCard = ({ thumbnail, title, videoId, onPlay }) => (
   <div className="relative group cursor-pointer" onClick={() => onPlay(videoId)}>
@@ -27,7 +29,7 @@ const YouTubePlayer = ({ videoId, onClose }) => (
       >
         <X size={24} />
       </button>
-      <div className="aspect-w-16 aspect-h-9">
+      <div className="aspect-w-16 h-[60vh] md:h-[80vh]">
         <iframe
           src={`https://www.youtube.com/embed/${videoId}`}
           allow="autoplay; encrypted-media"
@@ -42,18 +44,18 @@ const YouTubePlayer = ({ videoId, onClose }) => (
 const VideosPage = () => {
   const [playingVideoId, setPlayingVideoId] = useState(null);
 
-  const mainVideoId = "gi3iUIqBqylodN3w";
-  const mainVideoTitle = "R O I - GOODIE MAN";
+  const mainVideoId = "bv8a5OuQztE?si=SRC95rwqNSqT_EvJ";
+  const mainVideoTitle = "R O I - T.H.C";
 
   const videoCards = [
-    { id: "video1", thumbnail: vid1, title: "Video 1", videoId: "gi3iUIqBqylodN3w" },
-    { id: "video2", thumbnail: vid2, title: "Video 2", videoId: "7fOMhk2BPjBh83UW" },
-    { id: "video3", thumbnail: vid3, title: "Video 3", videoId: "Yid3eFDMgVW26lIY" },
-    { id: "video4", thumbnail: vid4, title: "Video 4", videoId: "JBVB5YuW3IxEPZJq" },
-    { id: "video3", thumbnail: vid5, title: "Video 5", videoId: "s8gtmwCPW2w4_n0O" },
-    { id: "video4", thumbnail: vid6, title: "Video 6", videoId: "zM5OnVz1bem20ET9" },
-    { id: "video2", thumbnail: vid2, title: "Video 2", videoId: "7fOMhk2BPjBh83UW" },
-    { id: "video3", thumbnail: vid3, title: "Video 3", videoId: "Yid3eFDMgVW26lIY" },
+    { id: "video1", thumbnail: vid1, title: "Video 1", videoId: "lYJA0iEyISg?si=CH81n1Kaob25eUvm"  },
+    { id: "video2", thumbnail: vid2, title: "Video 2", videoId: "SC_4_JuQ84k?si=r6ODWOZBDyyvcnt0" },
+    { id: "video3", thumbnail: vid3, title: "Video 3", videoId: "ZZmhABPVksE?si=3UGeeXcS6rcIeMdp" },
+    { id: "video4", thumbnail: vid4, title: "Video 4", videoId: "5MVaX3i5CX4?si=sOZrK8jVsv7xV6eH" },
+    { id: "video3", thumbnail: vid5, title: "Video 5", videoId: "zxi_XgrtYFc?si=aW2glkHgEbS6TFkF" },
+    { id: "video4", thumbnail: vid6, title: "Video 6", videoId: "r6BeHaH2gcM?si=mlC8VbORxVT5yjrY" },
+    { id: "video2", thumbnail: Dice, title: "Video 2", videoId: "uwDhm2YU-ZU?si=HBbQoKfFD5zuIxSl" },
+    { id: "video3", thumbnail: Street, title: "Video 3", videoId: "kWz_iIig6oo?si=Gfr4mL4begw-sDzf" },
   ];
 
   return (

@@ -82,7 +82,7 @@ const MusicPage = () => {
               <a 
                 href={item.link}
                 target="_blank"
-                className="inline-block w-[18%] text-center bg-transparent border border-[#ccff00] text-[#ccff00] py-2 px-4 cursor-pointer text-base font-bold tracking-wide transition-all duration-300 hover:bg-[#ccff00] hover:text-black"
+                className="inline-block w-[70%] md:w-[18%] text-center bg-transparent border border-[#ccff00] text-[#ccff00] py-2 px-4 cursor-pointer text-base font-bold tracking-wide transition-all duration-300 hover:bg-[#ccff00] hover:text-black"
               >
                 STREAM/DOWNLOAD
               </a>

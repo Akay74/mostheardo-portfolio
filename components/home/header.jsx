@@ -7,12 +7,12 @@ const NavLinks = React.memo(({ isMobile, onClick }) => (
     {['MUSIC', 'VIDEOS', 'SHOP', 'CONTACT'].map((item) => (
       <a
         key={item}
-        href={item === 'CONTACT' ? '#' : `/${item.toLowerCase()}`}
+        href={item === 'CONTACT' ? 'mailto:akaudeh@gmail.com?subject=Work with me&body=Hello, Roi' : `/${item.toLowerCase()}`}
         onClick={onClick}
         className={`font-bold uppercase ${
           isMobile
-            ? 'text-2xl my-5 text-[#ccff00]'
-            : 'text-base ml-5 text-black'
+            ? 'text-2xl my-5 text-[#ccff00] hover:text-[#fff]'
+            : 'text-base ml-5 text-black hover:text-blue-700 focus:text-blue-700'
         }`}
       >
         {item}
@@ -75,9 +75,9 @@ const HeaderComponent = () => {
 
   return (
     <>
-      <header className="bg-gray-100 p-2.5 text-black fixed top-0 left-0 right-0 z-50">
+      <header className="bg-gray-200 p-2.5 text-black fixed top-0 left-0 right-0 z-50">
         <div className="flex h-[5vh] justify-between items-center py-5 px-4 md:p-8">
-          <a href="/#" className="text-black text-xl md:text-2xl font-bold tracking-[2px] md:tracking-[6px] cursor-pointer">MOSTHEARDOF</a>
+          <a href="/#" className="text-black text-xl md:text-4xl font-bold tracking-[2px] cursor-pointer">MOSTHEARDOF</a>
           <button onClick={toggleMenu} className="bg-transparent border-none text-black text-2xl cursor-pointer md:hidden">
             {isMenuOpen ? <FaTimes /> : <FaBars />}
           </button>
